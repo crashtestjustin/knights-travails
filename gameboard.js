@@ -6,8 +6,6 @@ export function boardCreate() {
   return board;
 }
 
-// console.log(boardCreate());
-
 export class Knight {
   constructor(row, col) {
     this.row = row;
@@ -20,4 +18,3 @@ export class Knight {
 }
 
 const knight = new Knight(0, 0);
-// console.log(knight.getPosition());

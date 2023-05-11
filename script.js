@@ -29,8 +29,6 @@ function knightMoves(start, end) {
     }
   }
   return null;
-
-  //   console.log(moves);
 }
 
 function getLegalMoves(col, row) {
@@ -70,4 +68,4 @@ function arraysMatch(arr1, arr2) {
   );
 }
 
-console.log(knightMoves([1, 3], [5, 6]));
+console.log(knightMoves([2, 3], [3, 2]));
