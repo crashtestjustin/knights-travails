@@ -1,0 +1,16 @@
+{
+  "name": "knights-travails",
+  "version": "1.0.0",
+  "description": "Knights Travails is a codebase that determines the shortest path a knoght can travel between two points on an 8x8 chess board while adhering the a knight's move restrictions.",
+  "type": "module",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.82.1",
+    "webpack-cli": "^5.1.1"
+  }
+}

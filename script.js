@@ -1,12 +1,39 @@
-import { boardCreate, Knight } from "./gameboard";
+import { boardCreate, Knight } from "./gameboard.js";
 
 function knightMoves(start, end) {
   const board = boardCreate();
   const knight = new Knight(start[0], start[1]);
-  legalMoves(start[0], start[1]);
+
+  const queue = [[knight.getPosition(), [knight.getPosition()]]];
+  const visited = { [knight.getPosition()]: true };
+
+  while (queue.length > 0) {
+    const [currPos, currPath] = queue.shift();
+
+    const legalMoves = getLegalMoves(currPos[0], currPos[1]);
+
+    for (const move of legalMoves) {
+      if (arraysMatch(move, end)) {
+        const finalPath = [...currPath, move];
+        return `The shortest path was ${
+          finalPath.length - 1
+        } moves!\nHere are are moves:\n${finalPath
+          .map((move) => move.join(","))
+          .join("\n")}`;
+      }
+
+      if (!visited[move]) {
+        queue.push([move, [...currPath, move]]);
+        visited[move] = true;
+      }
+    }
+  }
+  return null;
+
+  //   console.log(moves);
 }
 
-function legalMoves(col, row) {
+function getLegalMoves(col, row) {
   const possibleMoves = [
     [1, -2],
     [2, -1],
@@ -35,4 +62,12 @@ function legalMoves(col, row) {
   });
   return validMoves;
 }
-console.log(legalMoves(1, 3));
+
+function arraysMatch(arr1, arr2) {
+  return (
+    arr1.length === arr2.length &&
+    arr1.every((elem, index) => elem === arr2[index])
+  );
+}
+
+console.log(knightMoves([1, 3], [5, 6]));
