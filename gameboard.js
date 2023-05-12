@@ -17,4 +17,4 @@ export class Knight {
   }
 }
 
-const knight = new Knight(0, 0);
+// const knight = new Knight(0, 0);
