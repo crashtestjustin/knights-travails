@@ -68,4 +68,4 @@ function arraysMatch(arr1, arr2) {
   );
 }
 
-console.log(knightMoves([0, 0], [7, 7]));
+console.log(knightMoves([0, 0], [5, 7]));
